@@ -1,6 +1,7 @@
 /*
 In this file you'll find - basic program structure and how to use the various types of variables and commands and functions in c++.
 We will create a basic math and letter distance calculator using all basic concepts to start with c++
+After those functions we'll run the fibonacci sequence using the result given by the rounded sqrt product of the multiplication of x and y
 */
 
 #include <iostream> // for input-output usage
@@ -12,6 +13,7 @@ int add(int x, int y);
 int subtract(int x, int y);
 int multiply(int x, int y);
 float divide(int x, int y, float div);
+int fibo(int x);
 int charDistance (char a, char b); // for finding the distance between two characters
 
 /*
@@ -22,7 +24,7 @@ enum SELECT {math = 1, distnce = 2};
 int main()
 {
   // variables that would be useful for the program. NOT ALWAYS USEFUL - BE MEMORY FRIENDLY
-  int x, y, select; // use unique names for your variables. x and y are common in math, and calling the selection variable 'select' makes it much easier to follow along
+  int x=0, y=0, select; // use unique names for your variables. x and y are common in math, and calling the selection variable 'select' makes it much easier to follow along
   char a, b;
   float divideResult; // give it a name that makes sense
   cout << "Welcome to the multi-calculator.\n 1- math calculator 2 - char distance 0 - exit" << endl; // let the user to know what you're planing to do.
@@ -67,6 +69,7 @@ int main()
       cin >> select;  
     }
   }
+  cout << fibo (sqrt(multiply (x,y))); // beware to not create a endless loop, and make sure all values are intialized to some value at the start of the program
   return 0; // exiting a int function always required a
 }
 
@@ -83,24 +86,30 @@ int charDistance (char a, char b)
   int distance = abs(a-b); // if we think about it, the distance between two things has to be a positive value, because we need to give the user a reasonable answer
   return distance;
 }
+int fibo(int n)
+{
+ if (n<=1) return n;
+  return fibo(n-1) + fibo (n-2);
+}
 
 /* CODE EXAMPLE:
 Welcome to the multi-calculator.
  1- math calculator 2 - char distance 0 - exit
 1
 enter two numbers
-40
-50
-90 -10
-2000 0.8
+6
+12
+18 -6
+72 0.5
 the absolute value of the division is 0
 select again. 0 - exit, 1 - math, 2 - distance
 2
 enter two characters
-a
-7
-the distance between the characters is: 42
+5
+Y
+the distance between the characters is: 36
 select again. 0 - exit, 1 - math, 2 - distance
 0
+21
 
 */
