@@ -1,9 +1,0 @@
-Hello World. JK
-
-Hey guys, I'm setting here a place where you will find every useful piece of code to get ready for the test
-If you have any kind of material you can share - please contact me, so I'll upload it.
-
-What you'll find here?
-1. Basic C++ - setting your first program. creating variables from various types, basic data IO.
-2. Conditions and loops - if.. else.., oneline condition, for, while, do.
-3. 
